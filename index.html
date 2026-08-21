@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="外部送信なしで日本語文章を点検・整形するローカルツール" />
+    <title>文整 — 日本語文章の事前点検</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="eyebrow">LOCAL-ONLY WRITING PREFLIGHT</p>
+        <h1>文整</h1>
+        <p class="intro">日本語の文章とMarkdownを、送信せずに静かに点検します。</p>
+      </header>
+
+      <section class="workspace" aria-label="文章点検">
+        <label for="source">文章</label>
+        <textarea id="source" spellcheck="false" placeholder="ここに文章またはMarkdownを貼り付けてください。"></textarea>
+        <div class="actions">
+          <button id="inspect" type="button">点検する</button>
+          <button id="format" class="secondary" type="button">安全に整形</button>
+          <button id="copy" class="secondary" type="button" disabled>整形結果をコピー</button>
+          <button id="clear" class="quiet" type="button">消去</button>
+        </div>
+        <p id="privacy" class="privacy">入力内容はこのブラウザ内だけで処理されます。</p>
+      </section>
+
+      <section class="results" aria-live="polite">
+        <div class="result-heading">
+          <h2>点検結果</h2>
+          <span id="summary">文章を入力すると結果を表示します</span>
+        </div>
+        <ul id="findings" class="findings"></ul>
+      </section>
+
+      <section class="output">
+        <label for="formatted">整形結果</label>
+        <textarea id="formatted" readonly placeholder="「安全に整形」を選ぶと、ここに結果が表示されます。"></textarea>
+        <details>
+          <summary>点検する項目</summary>
+          <p>行末空白、連続する空行、句読点スタイル、全角／半角英数字の混在、120文字を超える行、画像の代替テキストを点検します。</p>
+          <p>整形では改行形式・行末空白・3行以上の連続空行だけを変更します。表記そのものは自動変換しません。</p>
+        </details>
+      </section>
+      <footer>文整 v0.1.0 · ローカル処理のみ · 公開前試作</footer>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
