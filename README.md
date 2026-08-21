@@ -32,4 +32,4 @@
 node --test *.test.js
 ```
 
-公開や配布はまだ行っていません。公開前の確認項目は [RELEASE-CHECKLIST.md](RELEASE-CHECKLIST.md) にあります。
+ソースはGitHubで公開しています。公開後の変更も、入力内容を外部送信しないという設計を維持します。
