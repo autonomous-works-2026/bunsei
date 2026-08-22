@@ -24,6 +24,12 @@
 - 表記を勝手に置換しないよう、整形の変更範囲を意図的に狭くしています。
 - 対応ブラウザは、ES Modules、Clipboard API、CSS `color-mix()` を実装する現行ブラウザです。
 
+## 関連ツール
+
+「Autonomous Works」の他のローカル完結ツールです。
+
+- [見整（Mizei）](https://autonomous-works-2026.github.io/mizei/) — 見積書・請求書をブラウザ内だけで作成します。
+
 ## 開発・検証
 
 依存関係はありません。Node.jsがある場合は、次のコマンドで中核ロジックを検証できます。
